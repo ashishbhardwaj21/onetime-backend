@@ -1,0 +1,56 @@
+{
+  "timestamp": "2025-06-28T17:37:53.914Z",
+  "environment": "https://onetime-backend.onrender.com",
+  "results": {
+    "authentication": {
+      "passed": 0,
+      "failed": 3,
+      "tests": [
+        {
+          "name": "User Registration",
+          "status": "FAILED",
+          "duration": "N/A",
+          "error": "Cannot read properties of undefined (reading '_id')"
+        },
+        {
+          "name": "User Login",
+          "status": "FAILED",
+          "duration": "0ms",
+          "error": "Test returned false"
+        },
+        {
+          "name": "Token Validation",
+          "status": "FAILED",
+          "duration": "0ms",
+          "error": "Test returned false"
+        }
+      ]
+    },
+    "profile": {
+      "passed": 0,
+      "failed": 0,
+      "tests": []
+    },
+    "discovery": {
+      "passed": 0,
+      "failed": 0,
+      "tests": []
+    },
+    "messaging": {
+      "passed": 0,
+      "failed": 0,
+      "tests": []
+    },
+    "activities": {
+      "passed": 0,
+      "failed": 0,
+      "tests": []
+    }
+  },
+  "testUsers": 0,
+  "summary": {
+    "totalPassed": 0,
+    "totalFailed": 3,
+    "overallPercentage": 0
+  }
+}
