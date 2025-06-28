@@ -1,0 +1,1467 @@
+{
+  error: Error: accountSid must start with AC
+      at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)
+      at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)
+      at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)
+      at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)
+      at Module._compile (node:internal/modules/cjs/loader:1739:14)
+      at Object..js (node:internal/modules/cjs/loader:1904:10)
+      at Module.load (node:internal/modules/cjs/loader:1473:32)
+      at Function._load (node:internal/modules/cjs/loader:1285:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:234:24),
+  level: 'error',
+  message: 'uncaughtException: accountSid must start with AC\n' +
+    'Error: accountSid must start with AC\n' +
+    '    at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)\n' +
+    '    at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)\n' +
+    '    at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)\n' +
+    '    at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1739:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1904:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1473:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1285:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:234:24)',
+  stack: 'Error: accountSid must start with AC\n' +
+    '    at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)\n' +
+    '    at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)\n' +
+    '    at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)\n' +
+    '    at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1739:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1904:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1473:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1285:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:234:24)',
+  exception: true,
+  date: 'Fri Jun 27 2025 22:45:55 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 4911,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend',
+    execPath: '/opt/homebrew/Cellar/node/23.6.1/bin/node',
+    version: 'v23.6.1',
+    argv: [
+      '/opt/homebrew/Cellar/node/23.6.1/bin/node',
+      '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/server.js'
+    ],
+    memoryUsage: {
+      rss: 93306880,
+      heapTotal: 61423616,
+      heapUsed: 37027952,
+      external: 21583154,
+      arrayBuffers: 18311521
+    }
+  },
+  os: {
+    loadavg: [ 1.98779296875, 2.9736328125, 3.158203125 ],
+    uptime: 1935101
+  },
+  trace: [
+    {
+      column: 23,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js',
+      function: 'new Client',
+      line: 71,
+      method: null,
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js',
+      function: 'new Twilio',
+      line: 33,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js',
+      function: 'TwilioSDK',
+      line: 40,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js',
+      function: null,
+      line: 31,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1739,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1904,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1473,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1285,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 234,
+      method: null,
+      native: false
+    }
+  ],
+  service: 'onetime-backend',
+  environment: 'development',
+  timestamp: '2025-06-27 22:45:55'
+}
+{
+  error: Error: accountSid must start with AC
+      at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)
+      at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)
+      at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)
+      at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)
+      at Module._compile (node:internal/modules/cjs/loader:1739:14)
+      at Object..js (node:internal/modules/cjs/loader:1904:10)
+      at Module.load (node:internal/modules/cjs/loader:1473:32)
+      at Function._load (node:internal/modules/cjs/loader:1285:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:234:24),
+  level: 'error',
+  message: 'uncaughtException: accountSid must start with AC\n' +
+    'Error: accountSid must start with AC\n' +
+    '    at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)\n' +
+    '    at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)\n' +
+    '    at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)\n' +
+    '    at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1739:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1904:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1473:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1285:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:234:24)',
+  stack: 'Error: accountSid must start with AC\n' +
+    '    at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)\n' +
+    '    at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)\n' +
+    '    at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)\n' +
+    '    at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1739:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1904:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1473:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1285:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:234:24)',
+  exception: true,
+  date: 'Fri Jun 27 2025 22:46:50 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 4962,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend',
+    execPath: '/opt/homebrew/Cellar/node/23.6.1/bin/node',
+    version: 'v23.6.1',
+    argv: [
+      '/opt/homebrew/Cellar/node/23.6.1/bin/node',
+      '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/server.js'
+    ],
+    memoryUsage: {
+      rss: 95682560,
+      heapTotal: 61423616,
+      heapUsed: 37015312,
+      external: 21583154,
+      arrayBuffers: 18311521
+    }
+  },
+  os: {
+    loadavg: [ 1.91650390625, 2.76513671875, 3.0673828125 ],
+    uptime: 1935156
+  },
+  trace: [
+    {
+      column: 23,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js',
+      function: 'new Client',
+      line: 71,
+      method: null,
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js',
+      function: 'new Twilio',
+      line: 33,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js',
+      function: 'TwilioSDK',
+      line: 40,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js',
+      function: null,
+      line: 31,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1739,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1904,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1473,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1285,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 234,
+      method: null,
+      native: false
+    }
+  ],
+  service: 'onetime-backend',
+  environment: 'development',
+  timestamp: '2025-06-27 22:46:50'
+}
+{
+  error: Error: accountSid must start with AC
+      at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)
+      at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)
+      at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)
+      at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)
+      at Module._compile (node:internal/modules/cjs/loader:1739:14)
+      at Object..js (node:internal/modules/cjs/loader:1904:10)
+      at Module.load (node:internal/modules/cjs/loader:1473:32)
+      at Function._load (node:internal/modules/cjs/loader:1285:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:234:24),
+  level: 'error',
+  message: 'uncaughtException: accountSid must start with AC\n' +
+    'Error: accountSid must start with AC\n' +
+    '    at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)\n' +
+    '    at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)\n' +
+    '    at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)\n' +
+    '    at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1739:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1904:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1473:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1285:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:234:24)',
+  stack: 'Error: accountSid must start with AC\n' +
+    '    at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)\n' +
+    '    at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)\n' +
+    '    at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)\n' +
+    '    at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1739:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1904:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1473:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1285:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:234:24)',
+  exception: true,
+  date: 'Fri Jun 27 2025 22:48:51 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 5128,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend',
+    execPath: '/opt/homebrew/Cellar/node/23.6.1/bin/node',
+    version: 'v23.6.1',
+    argv: [
+      '/opt/homebrew/Cellar/node/23.6.1/bin/node',
+      '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/server.js'
+    ],
+    memoryUsage: {
+      rss: 95993856,
+      heapTotal: 60899328,
+      heapUsed: 38828816,
+      external: 21583154,
+      arrayBuffers: 18311521
+    }
+  },
+  os: {
+    loadavg: [ 2.08056640625, 2.53759765625, 2.9326171875 ],
+    uptime: 1935277
+  },
+  trace: [
+    {
+      column: 23,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js',
+      function: 'new Client',
+      line: 71,
+      method: null,
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js',
+      function: 'new Twilio',
+      line: 33,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js',
+      function: 'TwilioSDK',
+      line: 40,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js',
+      function: null,
+      line: 31,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1739,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1904,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1473,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1285,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 234,
+      method: null,
+      native: false
+    }
+  ],
+  service: 'onetime-backend',
+  environment: 'development',
+  timestamp: '2025-06-27 22:48:51'
+}
+{
+  error: Error: accountSid must start with AC
+      at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)
+      at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)
+      at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)
+      at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)
+      at Module._compile (node:internal/modules/cjs/loader:1739:14)
+      at Object..js (node:internal/modules/cjs/loader:1904:10)
+      at Module.load (node:internal/modules/cjs/loader:1473:32)
+      at Function._load (node:internal/modules/cjs/loader:1285:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:234:24),
+  level: 'error',
+  message: 'uncaughtException: accountSid must start with AC\n' +
+    'Error: accountSid must start with AC\n' +
+    '    at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)\n' +
+    '    at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)\n' +
+    '    at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)\n' +
+    '    at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1739:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1904:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1473:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1285:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:234:24)',
+  stack: 'Error: accountSid must start with AC\n' +
+    '    at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)\n' +
+    '    at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)\n' +
+    '    at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)\n' +
+    '    at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1739:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1904:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1473:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1285:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:234:24)',
+  exception: true,
+  date: 'Fri Jun 27 2025 22:49:15 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 5151,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend',
+    execPath: '/opt/homebrew/Cellar/node/23.6.1/bin/node',
+    version: 'v23.6.1',
+    argv: [
+      '/opt/homebrew/Cellar/node/23.6.1/bin/node',
+      '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/server.js'
+    ],
+    memoryUsage: {
+      rss: 96010240,
+      heapTotal: 61423616,
+      heapUsed: 37094152,
+      external: 21583154,
+      arrayBuffers: 18311521
+    }
+  },
+  os: {
+    loadavg: [ 2.07080078125, 2.49365234375, 2.90478515625 ],
+    uptime: 1935301
+  },
+  trace: [
+    {
+      column: 23,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js',
+      function: 'new Client',
+      line: 71,
+      method: null,
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js',
+      function: 'new Twilio',
+      line: 33,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js',
+      function: 'TwilioSDK',
+      line: 40,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js',
+      function: null,
+      line: 31,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1739,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1904,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1473,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1285,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 234,
+      method: null,
+      native: false
+    }
+  ],
+  service: 'onetime-backend',
+  environment: 'development',
+  timestamp: '2025-06-27 22:49:15'
+}
+{
+  error: Error: accountSid must start with AC
+      at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)
+      at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)
+      at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)
+      at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)
+      at Module._compile (node:internal/modules/cjs/loader:1739:14)
+      at Object..js (node:internal/modules/cjs/loader:1904:10)
+      at Module.load (node:internal/modules/cjs/loader:1473:32)
+      at Function._load (node:internal/modules/cjs/loader:1285:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:234:24),
+  level: 'error',
+  message: 'uncaughtException: accountSid must start with AC\n' +
+    'Error: accountSid must start with AC\n' +
+    '    at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)\n' +
+    '    at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)\n' +
+    '    at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)\n' +
+    '    at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1739:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1904:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1473:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1285:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:234:24)',
+  stack: 'Error: accountSid must start with AC\n' +
+    '    at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)\n' +
+    '    at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)\n' +
+    '    at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)\n' +
+    '    at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1739:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1904:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1473:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1285:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:234:24)',
+  exception: true,
+  date: 'Fri Jun 27 2025 22:49:48 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 5162,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend',
+    execPath: '/opt/homebrew/Cellar/node/23.6.1/bin/node',
+    version: 'v23.6.1',
+    argv: [
+      '/opt/homebrew/Cellar/node/23.6.1/bin/node',
+      '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/server.js'
+    ],
+    memoryUsage: {
+      rss: 98762752,
+      heapTotal: 60899328,
+      heapUsed: 38583656,
+      external: 21583154,
+      arrayBuffers: 18311521
+    }
+  },
+  os: { loadavg: [ 2.25, 2.505859375, 2.89501953125 ], uptime: 1935334 },
+  trace: [
+    {
+      column: 23,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js',
+      function: 'new Client',
+      line: 71,
+      method: null,
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js',
+      function: 'new Twilio',
+      line: 33,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js',
+      function: 'TwilioSDK',
+      line: 40,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js',
+      function: null,
+      line: 31,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1739,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1904,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1473,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1285,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 234,
+      method: null,
+      native: false
+    }
+  ],
+  service: 'onetime-backend',
+  environment: 'development',
+  timestamp: '2025-06-27 22:49:48'
+}
+{
+  error: Error: accountSid must start with AC
+      at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)
+      at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)
+      at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)
+      at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)
+      at Module._compile (node:internal/modules/cjs/loader:1739:14)
+      at Object..js (node:internal/modules/cjs/loader:1904:10)
+      at Module.load (node:internal/modules/cjs/loader:1473:32)
+      at Function._load (node:internal/modules/cjs/loader:1285:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:234:24),
+  level: 'error',
+  message: 'uncaughtException: accountSid must start with AC\n' +
+    'Error: accountSid must start with AC\n' +
+    '    at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)\n' +
+    '    at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)\n' +
+    '    at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)\n' +
+    '    at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1739:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1904:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1473:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1285:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:234:24)',
+  stack: 'Error: accountSid must start with AC\n' +
+    '    at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)\n' +
+    '    at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)\n' +
+    '    at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)\n' +
+    '    at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1739:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1904:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1473:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1285:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:234:24)',
+  exception: true,
+  date: 'Fri Jun 27 2025 22:51:12 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 5268,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend',
+    execPath: '/opt/homebrew/Cellar/node/23.6.1/bin/node',
+    version: 'v23.6.1',
+    argv: [
+      '/opt/homebrew/Cellar/node/23.6.1/bin/node',
+      '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/server-simple.js'
+    ],
+    memoryUsage: {
+      rss: 92127232,
+      heapTotal: 61440000,
+      heapUsed: 33901792,
+      external: 21558772,
+      arrayBuffers: 18311344
+    }
+  },
+  os: {
+    loadavg: [ 0.9921875, 2.0400390625, 2.67724609375 ],
+    uptime: 1935418
+  },
+  trace: [
+    {
+      column: 23,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js',
+      function: 'new Client',
+      line: 71,
+      method: null,
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js',
+      function: 'new Twilio',
+      line: 33,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js',
+      function: 'TwilioSDK',
+      line: 40,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js',
+      function: null,
+      line: 31,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1739,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1904,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1473,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1285,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 234,
+      method: null,
+      native: false
+    }
+  ],
+  service: 'onetime-backend',
+  environment: 'development',
+  timestamp: '2025-06-27 22:51:12'
+}
+{
+  error: Error: accountSid must start with AC
+      at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)
+      at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)
+      at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)
+      at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)
+      at Module._compile (node:internal/modules/cjs/loader:1739:14)
+      at Object..js (node:internal/modules/cjs/loader:1904:10)
+      at Module.load (node:internal/modules/cjs/loader:1473:32)
+      at Function._load (node:internal/modules/cjs/loader:1285:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:234:24),
+  level: 'error',
+  message: 'uncaughtException: accountSid must start with AC\n' +
+    'Error: accountSid must start with AC\n' +
+    '    at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)\n' +
+    '    at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)\n' +
+    '    at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)\n' +
+    '    at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1739:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1904:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1473:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1285:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:234:24)',
+  stack: 'Error: accountSid must start with AC\n' +
+    '    at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)\n' +
+    '    at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)\n' +
+    '    at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)\n' +
+    '    at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1739:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1904:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1473:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1285:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:234:24)',
+  exception: true,
+  date: 'Fri Jun 27 2025 23:09:58 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 5831,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend',
+    execPath: '/opt/homebrew/Cellar/node/23.6.1/bin/node',
+    version: 'v23.6.1',
+    argv: [
+      '/opt/homebrew/Cellar/node/23.6.1/bin/node',
+      '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/server-production.js'
+    ],
+    memoryUsage: {
+      rss: 93536256,
+      heapTotal: 61423616,
+      heapUsed: 37126056,
+      external: 21583154,
+      arrayBuffers: 18311521
+    }
+  },
+  os: {
+    loadavg: [ 3.423828125, 3.14453125, 2.7197265625 ],
+    uptime: 1936544
+  },
+  trace: [
+    {
+      column: 23,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js',
+      function: 'new Client',
+      line: 71,
+      method: null,
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js',
+      function: 'new Twilio',
+      line: 33,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js',
+      function: 'TwilioSDK',
+      line: 40,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js',
+      function: null,
+      line: 31,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1739,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1904,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1473,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1285,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 234,
+      method: null,
+      native: false
+    }
+  ],
+  service: 'onetime-backend',
+  environment: 'development',
+  timestamp: '2025-06-27 23:09:58'
+}
+{
+  error: Error: accountSid must start with AC
+      at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)
+      at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)
+      at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)
+      at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)
+      at Module._compile (node:internal/modules/cjs/loader:1739:14)
+      at Object..js (node:internal/modules/cjs/loader:1904:10)
+      at Module.load (node:internal/modules/cjs/loader:1473:32)
+      at Function._load (node:internal/modules/cjs/loader:1285:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:234:24),
+  level: 'error',
+  message: 'uncaughtException: accountSid must start with AC\n' +
+    'Error: accountSid must start with AC\n' +
+    '    at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)\n' +
+    '    at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)\n' +
+    '    at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)\n' +
+    '    at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1739:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1904:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1473:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1285:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:234:24)',
+  stack: 'Error: accountSid must start with AC\n' +
+    '    at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)\n' +
+    '    at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)\n' +
+    '    at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)\n' +
+    '    at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1739:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1904:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1473:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1285:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:234:24)',
+  exception: true,
+  date: 'Fri Jun 27 2025 23:10:27 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 5839,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend',
+    execPath: '/opt/homebrew/Cellar/node/23.6.1/bin/node',
+    version: 'v23.6.1',
+    argv: [
+      '/opt/homebrew/Cellar/node/23.6.1/bin/node',
+      '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/server-production.js'
+    ],
+    memoryUsage: {
+      rss: 97730560,
+      heapTotal: 61423616,
+      heapUsed: 36894464,
+      external: 21583154,
+      arrayBuffers: 18311521
+    }
+  },
+  os: {
+    loadavg: [ 3.58935546875, 3.21044921875, 2.75537109375 ],
+    uptime: 1936573
+  },
+  trace: [
+    {
+      column: 23,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js',
+      function: 'new Client',
+      line: 71,
+      method: null,
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js',
+      function: 'new Twilio',
+      line: 33,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js',
+      function: 'TwilioSDK',
+      line: 40,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js',
+      function: null,
+      line: 31,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1739,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1904,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1473,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1285,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 234,
+      method: null,
+      native: false
+    }
+  ],
+  service: 'onetime-backend',
+  environment: 'development',
+  timestamp: '2025-06-27 23:10:27'
+}
+{
+  error: Error: accountSid must start with AC
+      at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)
+      at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)
+      at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)
+      at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)
+      at Module._compile (node:internal/modules/cjs/loader:1739:14)
+      at Object..js (node:internal/modules/cjs/loader:1904:10)
+      at Module.load (node:internal/modules/cjs/loader:1473:32)
+      at Function._load (node:internal/modules/cjs/loader:1285:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:234:24),
+  level: 'error',
+  message: 'uncaughtException: accountSid must start with AC\n' +
+    'Error: accountSid must start with AC\n' +
+    '    at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)\n' +
+    '    at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)\n' +
+    '    at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)\n' +
+    '    at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1739:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1904:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1473:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1285:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:234:24)',
+  stack: 'Error: accountSid must start with AC\n' +
+    '    at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)\n' +
+    '    at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)\n' +
+    '    at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)\n' +
+    '    at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1739:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1904:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1473:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1285:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:234:24)',
+  exception: true,
+  date: 'Fri Jun 27 2025 23:11:01 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 5846,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend',
+    execPath: '/opt/homebrew/Cellar/node/23.6.1/bin/node',
+    version: 'v23.6.1',
+    argv: [
+      '/opt/homebrew/Cellar/node/23.6.1/bin/node',
+      '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/server-production.js'
+    ],
+    memoryUsage: {
+      rss: 94830592,
+      heapTotal: 61423616,
+      heapUsed: 36849424,
+      external: 21558773,
+      arrayBuffers: 18311345
+    }
+  },
+  os: {
+    loadavg: [ 2.87744140625, 3.07470703125, 2.72412109375 ],
+    uptime: 1936607
+  },
+  trace: [
+    {
+      column: 23,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js',
+      function: 'new Client',
+      line: 71,
+      method: null,
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js',
+      function: 'new Twilio',
+      line: 33,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js',
+      function: 'TwilioSDK',
+      line: 40,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js',
+      function: null,
+      line: 31,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1739,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1904,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1473,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1285,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 234,
+      method: null,
+      native: false
+    }
+  ],
+  service: 'onetime-backend',
+  environment: 'development',
+  timestamp: '2025-06-27 23:11:01'
+}
+{
+  error: Error: accountSid must start with AC
+      at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)
+      at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)
+      at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)
+      at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)
+      at Module._compile (node:internal/modules/cjs/loader:1739:14)
+      at Object..js (node:internal/modules/cjs/loader:1904:10)
+      at Module.load (node:internal/modules/cjs/loader:1473:32)
+      at Function._load (node:internal/modules/cjs/loader:1285:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:234:24),
+  level: 'error',
+  message: 'uncaughtException: accountSid must start with AC\n' +
+    'Error: accountSid must start with AC\n' +
+    '    at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)\n' +
+    '    at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)\n' +
+    '    at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)\n' +
+    '    at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1739:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1904:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1473:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1285:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:234:24)',
+  stack: 'Error: accountSid must start with AC\n' +
+    '    at new Client (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js:71:23)\n' +
+    '    at new Twilio (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js:33:9)\n' +
+    '    at TwilioSDK (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js:40:12)\n' +
+    '    at Object.<anonymous> (/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js:31:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1739:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1904:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1473:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1285:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:234:24)',
+  exception: true,
+  date: 'Fri Jun 27 2025 23:11:07 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 5852,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend',
+    execPath: '/opt/homebrew/Cellar/node/23.6.1/bin/node',
+    version: 'v23.6.1',
+    argv: [
+      '/opt/homebrew/Cellar/node/23.6.1/bin/node',
+      '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/server-production.js'
+    ],
+    memoryUsage: {
+      rss: 94535680,
+      heapTotal: 61440000,
+      heapUsed: 37501432,
+      external: 21558773,
+      arrayBuffers: 18311345
+    }
+  },
+  os: {
+    loadavg: [ 2.88720703125, 3.0732421875, 2.7255859375 ],
+    uptime: 1936613
+  },
+  trace: [
+    {
+      column: 23,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/base/BaseTwilio.js',
+      function: 'new Client',
+      line: 71,
+      method: null,
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/rest/Twilio.js',
+      function: 'new Twilio',
+      line: 33,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/node_modules/twilio/lib/index.js',
+      function: 'TwilioSDK',
+      line: 40,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/ashishbhardwaj/Documents/Data/Xcode oneTime/One Time/OneTime Backend/utils/communications.js',
+      function: null,
+      line: 31,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1739,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1904,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1473,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1285,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 234,
+      method: null,
+      native: false
+    }
+  ],
+  service: 'onetime-backend',
+  environment: 'development',
+  timestamp: '2025-06-27 23:11:07'
+}

@@ -1,0 +1,140 @@
+{
+  "timestamp": "2025-06-28T16:14:28.757Z",
+  "environment": "https://onetimedating.me",
+  "results": {
+    "connectivity": {
+      "passed": 4,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "HTTPS Connection",
+          "status": "PASSED",
+          "duration": "491ms"
+        },
+        {
+          "name": "SSL Certificate Validity",
+          "status": "PASSED",
+          "duration": "1957ms"
+        },
+        {
+          "name": "HTTP to HTTPS Redirect",
+          "status": "PASSED",
+          "duration": "574ms"
+        },
+        {
+          "name": "Response Time < 2s",
+          "status": "PASSED",
+          "duration": "93ms"
+        }
+      ]
+    },
+    "security": {
+      "passed": 1,
+      "failed": 3,
+      "tests": [
+        {
+          "name": "Security Headers Present",
+          "status": "FAILED",
+          "duration": "147ms",
+          "error": "Test returned false"
+        },
+        {
+          "name": "CORS Configuration",
+          "status": "PASSED",
+          "duration": "83ms"
+        },
+        {
+          "name": "Rate Limiting Active",
+          "status": "FAILED",
+          "duration": "1520ms",
+          "error": "Test returned false"
+        },
+        {
+          "name": "Authentication Required for Protected Routes",
+          "status": "FAILED",
+          "duration": "67ms",
+          "error": "Test returned false"
+        }
+      ]
+    },
+    "functionality": {
+      "passed": 1,
+      "failed": 3,
+      "tests": [
+        {
+          "name": "Health Endpoint",
+          "status": "FAILED",
+          "duration": "79ms",
+          "error": "Test returned false"
+        },
+        {
+          "name": "API Endpoints Available",
+          "status": "PASSED",
+          "duration": "100ms"
+        },
+        {
+          "name": "Database Connectivity",
+          "status": "FAILED",
+          "duration": "80ms",
+          "error": "Test returned false"
+        },
+        {
+          "name": "File Upload Endpoint",
+          "status": "FAILED",
+          "duration": "75ms",
+          "error": "Test returned false"
+        }
+      ]
+    },
+    "performance": {
+      "passed": 2,
+      "failed": 1,
+      "tests": [
+        {
+          "name": "Average Response Time < 500ms",
+          "status": "PASSED",
+          "duration": "913ms"
+        },
+        {
+          "name": "Handle 20 Concurrent Requests",
+          "status": "PASSED",
+          "duration": "117ms"
+        },
+        {
+          "name": "Response Compression Enabled",
+          "status": "FAILED",
+          "duration": "97ms",
+          "error": "Test returned false"
+        }
+      ]
+    },
+    "integration": {
+      "passed": 0,
+      "failed": 3,
+      "tests": [
+        {
+          "name": "User Registration Flow",
+          "status": "FAILED",
+          "duration": "67ms",
+          "error": "Test returned false"
+        },
+        {
+          "name": "Authentication Flow",
+          "status": "FAILED",
+          "duration": "76ms",
+          "error": "Test returned false"
+        },
+        {
+          "name": "Error Handling",
+          "status": "FAILED",
+          "duration": "72ms",
+          "error": "Test returned false"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "totalPassed": 8,
+    "totalFailed": 10
+  }
+}
