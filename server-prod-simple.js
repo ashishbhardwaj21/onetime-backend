@@ -4034,6 +4034,18 @@ io.on('connection', (socket) => {
   });
 });
 
+// ===========================================
+// INTEGRATE ALL ADVANCED FEATURES
+// ===========================================
+
+console.log('🚀 Integrating advanced features...');
+
+// Import and integrate all advanced features
+const { integrateAdvancedFeatures } = require('./integrate-advanced-features');
+integrateAdvancedFeatures(app);
+
+console.log('✅ Advanced features integration complete!');
+
 // 404 handler
 app.use('*', (req, res) => {
   res.status(404).json({
