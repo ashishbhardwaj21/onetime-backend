@@ -49,7 +49,11 @@
     "geolib": "^3.3.4",
     "sharp": "^0.32.6",
     "redis": "^4.6.10",
-    "multer-storage-cloudinary": "^4.0.0"
+    "multer-storage-cloudinary": "^4.0.0",
+    "apn": "^2.2.0",
+    "firebase-admin": "^12.0.0",
+    "node-fetch": "^3.3.2",
+    "geoip-lite": "^1.4.10"
   },
   "devDependencies": {
     "nodemon": "^3.0.2",
