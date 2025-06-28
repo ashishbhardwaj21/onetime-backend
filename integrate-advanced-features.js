@@ -55,6 +55,85 @@ function integrateAdvancedFeatures(app) {
   // Apple Authentication Routes (no auth required)
   app.use('/api/auth/apple', appleAuthRoutes);
 
+  // System endpoints (no auth required)
+  const InfrastructureScaling = require('./services/InfrastructureScaling');
+  
+  app.get('/api/system/health', async (req, res) => {
+    try {
+      const infrastructure = new InfrastructureScaling();
+      const health = await infrastructure.healthCheck();
+      
+      res.status(health.status === 'healthy' ? 200 : 503).json({
+        success: health.status === 'healthy',
+        message: `System status: ${health.status}`,
+        data: health
+      });
+    } catch (error) {
+      res.status(503).json({
+        success: false,
+        error: 'Health check failed',
+        message: error.message
+      });
+    }
+  });
+
+  // Advanced features status endpoint (no auth required)
+  app.get('/api/advanced/status', async (req, res) => {
+    try {
+      res.status(200).json({
+        success: true,
+        message: 'Advanced features are active',
+        data: {
+          version: '2.0.0',
+          features: {
+            appleSignIn: true,
+            pushNotifications: true,
+            securityFraudDetection: true,
+            infrastructureScaling: true,
+            adminAnalytics: true,
+            contentModeration: true,
+            advancedMatching: true,
+            locationServices: true,
+            aiRecommendations: true
+          },
+          endpoints: {
+            authentication: [
+              'POST /api/auth/apple/signin',
+              'POST /api/auth/apple/link',
+              'GET /api/auth/apple/status'
+            ],
+            systemHealth: [
+              'GET /api/system/health',
+              'GET /api/system/performance',
+              'GET /api/advanced/status'
+            ],
+            advancedFeatures: [
+              'POST /api/advanced/notifications/register-device',
+              'GET /api/advanced/matching/enhanced',
+              'POST /api/advanced/smart-swipe',
+              'GET /api/advanced/location/nearby',
+              'GET /api/advanced/ai/recommendations',
+              'POST /api/advanced/moderation/analyze',
+              'GET /api/advanced/security/analysis'
+            ]
+          },
+          authenticationRequired: 'Most endpoints require Bearer token authentication',
+          publicEndpoints: [
+            '/api/auth/apple/*',
+            '/api/system/health',
+            '/api/advanced/status'
+          ]
+        }
+      });
+    } catch (error) {
+      res.status(500).json({
+        success: false,
+        error: 'Failed to get status',
+        message: error.message
+      });
+    }
+  });
+
   // All other advanced features (require authentication)
   app.use('/api/advanced', authenticateToken, allAdvancedRoutes);
 
