@@ -545,7 +545,7 @@ class SecurityFraudDetection {
     };
 
     // Check profile completeness patterns
-    if (this.hasBot ProfilePattern(user.profile)) {
+    if (this.hasBotProfilePattern(user.profile)) {
       analysis.riskScore += 0.4;
       analysis.indicators.push('bot_profile_pattern');
     }
