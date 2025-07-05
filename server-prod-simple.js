@@ -65,6 +65,11 @@ const Activity = require('./models/Activity');
 // Import routes
 const authRoutes = require('./routes/auth');
 
+// Import middleware and utilities required by auth routes
+const authMiddleware = require('./middleware/auth');
+const logger = require('./utils/logger');
+const { sendVerificationEmail, sendSMS } = require('./utils/communications');
+
 // Import upload middleware
 const { upload, handleUploadError, deleteFromCloudinary, getOptimizedImageUrl } = require('./middleware/upload');
 
