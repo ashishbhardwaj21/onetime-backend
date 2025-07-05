@@ -47,6 +47,12 @@ const userSchema = new mongoose.Schema({
       maxlength: 500,
       trim: true
     },
+    phoneNumber: {
+      type: String,
+      sparse: true,
+      unique: true,
+      match: [/^\+?[1-9]\d{1,14}$/, 'Please enter a valid phone number']
+    },
     height: {
       type: Number, // in cm
       min: 100,
@@ -176,6 +182,239 @@ const userSchema = new mongoose.Schema({
       documentType: String
     }
   },
+  // Import subscription and billing schemas
+  subscription: {
+    tier: {
+      type: String,
+      enum: ['free', 'premium', 'vip'],
+      default: 'free'
+    },
+    status: {
+      type: String,
+      enum: ['active', 'canceled', 'paused', 'past_due', 'incomplete', 'trialing', 'pending'],
+      default: 'active'
+    },
+    stripeSubscriptionId: {
+      type: String,
+      sparse: true
+    },
+    stripeCustomerId: {
+      type: String,
+      sparse: true
+    },
+    startDate: {
+      type: Date,
+      default: Date.now
+    },
+    endDate: {
+      type: Date
+    },
+    currentPeriodStart: {
+      type: Date
+    },
+    currentPeriodEnd: {
+      type: Date
+    },
+    autoRenew: {
+      type: Boolean,
+      default: true
+    },
+    cancelAtPeriodEnd: {
+      type: Boolean,
+      default: false
+    },
+    canceledAt: {
+      type: Date
+    },
+    pausedAt: {
+      type: Date
+    },
+    resumedAt: {
+      type: Date
+    },
+    resumesAt: {
+      type: Date
+    },
+    features: {
+      dailyLikes: { type: mongoose.Schema.Types.Mixed, default: 10 },
+      monthlyMatches: { type: mongoose.Schema.Types.Mixed, default: 50 },
+      photosAllowed: { type: Number, default: 3 },
+      advancedFilters: { type: Boolean, default: false },
+      seeWhoLikesYou: { type: Boolean, default: false },
+      unlimitedRewinds: { type: Boolean, default: false },
+      readReceipts: { type: Boolean, default: false },
+      prioritySupport: { type: Boolean, default: false },
+      boosts: { type: mongoose.Schema.Types.Mixed, default: 0 },
+      superLikes: { type: mongoose.Schema.Types.Mixed, default: 1 },
+      incognitoMode: { type: Boolean, default: false },
+      passportMode: { type: Boolean, default: false },
+      videoCallMinutes: { type: mongoose.Schema.Types.Mixed, default: 0 },
+      aiInsights: { type: Boolean, default: false }
+    },
+    limits: {
+      conversationsPerDay: { type: mongoose.Schema.Types.Mixed, default: 5 },
+      activitiesPerWeek: { type: mongoose.Schema.Types.Mixed, default: 2 },
+      profileViewsPerDay: { type: mongoose.Schema.Types.Mixed, default: 20 }
+    },
+    metadata: {
+      upgradedFrom: { type: String },
+      upgradedAt: { type: Date },
+      promotionUsed: { type: String },
+      referralSource: { type: String }
+    }
+  },
+  billing: {
+    stripeCustomerId: {
+      type: String,
+      sparse: true
+    },
+    paymentMethodId: {
+      type: String
+    },
+    paymentMethodType: {
+      type: String,
+      enum: ['card', 'apple_pay', 'google_pay', 'paypal'],
+      default: 'card'
+    },
+    lastPaymentDate: {
+      type: Date
+    },
+    nextBillingDate: {
+      type: Date
+    },
+    paymentMethodUpdatedAt: {
+      type: Date
+    },
+    purchaseHistory: [{
+      type: {
+        type: String,
+        enum: ['subscription', 'addon', 'boost', 'super_likes', 'rewind'],
+        required: true
+      },
+      productId: String,
+      addOnId: String,
+      quantity: {
+        type: Number,
+        default: 1
+      },
+      amount: {
+        type: Number,
+        required: true
+      },
+      currency: {
+        type: String,
+        default: 'usd'
+      },
+      paymentIntentId: String,
+      status: {
+        type: String,
+        enum: ['succeeded', 'pending', 'failed', 'refunded'],
+        default: 'succeeded'
+      },
+      purchasedAt: {
+        type: Date,
+        default: Date.now
+      }
+    }],
+    promotionsUsed: [{
+      promotionId: {
+        type: String,
+        required: true
+      },
+      couponId: String,
+      discountPercent: Number,
+      discountAmount: Number,
+      usedAt: {
+        type: Date,
+        default: Date.now
+      }
+    }],
+    totalSpent: {
+      type: Number,
+      default: 0
+    },
+    lifetimeValue: {
+      type: Number,
+      default: 0
+    }
+  },
+  addOns: {
+    boosts: {
+      total: { type: Number, default: 0 },
+      used: { type: Number, default: 0 },
+      remaining: { type: Number, default: 0 },
+      lastUsed: Date
+    },
+    superLikes: {
+      total: { type: Number, default: 0 },
+      used: { type: Number, default: 0 },
+      remaining: { type: Number, default: 0 },
+      lastUsed: Date,
+      monthlyAllowance: { type: Number, default: 1 },
+      monthlyUsed: { type: Number, default: 0 }
+    },
+    rewinds: {
+      total: { type: Number, default: 0 },
+      used: { type: Number, default: 0 },
+      remaining: { type: Number, default: 0 },
+      lastUsed: Date
+    }
+  },
+  onboarding: {
+    startedAt: Date,
+    completedAt: Date,
+    currentStep: {
+      type: String,
+      default: 'welcome'
+    },
+    completedSteps: [String],
+    progress: {
+      type: Number,
+      default: 0
+    },
+    isComplete: {
+      type: Boolean,
+      default: false
+    },
+    personalityProfile: {
+      type: Map,
+      of: mongoose.Schema.Types.Mixed
+    },
+    preferences: {
+      type: Map,
+      of: mongoose.Schema.Types.Mixed
+    },
+    analyticsData: {
+      registrationSource: String,
+      deviceType: String,
+      startTime: Date,
+      stepsCompleted: Number,
+      lastStepCompletedAt: Date
+    },
+    tips: [String],
+    recommendations: [String]
+  },
+  analytics: {
+    cancellationReasons: [{
+      reason: String,
+      timestamp: Date,
+      tier: String
+    }],
+    conversionEvents: [{
+      eventType: String,
+      fromTier: String,
+      toTier: String,
+      timestamp: Date,
+      revenue: Number
+    }],
+    usageStats: {
+      dailyLikes: { type: Number, default: 0 },
+      monthlyMatches: { type: Number, default: 0 },
+      conversationsStarted: { type: Number, default: 0 },
+      activitiesJoined: { type: Number, default: 0 },
+      lastResetDate: { type: Date, default: Date.now }
+    }
+  },
   settings: {
     notifications: {
       matches: {
@@ -264,6 +503,18 @@ const userSchema = new mongoose.Schema({
         default: 'pending'
       }
     }]
+  },
+  isPhoneOnlyUser: {
+    type: Boolean,
+    default: false
+  },
+  appleId: {
+    type: String,
+    sparse: true
+  },
+  isAppleUser: {
+    type: Boolean,
+    default: false
   },
   analytics: {
     lastActiveAt: {

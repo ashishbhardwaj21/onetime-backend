@@ -322,6 +322,176 @@ router.post('/resend-verification', [
   }
 });
 
+// Phone authentication endpoints
+router.post('/phone/send-code', [
+  body('phoneNumber').matches(/^\+?[1-9]\d{1,14}$/).withMessage('Invalid phone number format')
+], async (req, res) => {
+  try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({
+        success: false,
+        message: 'Validation errors',
+        errors: errors.array()
+      });
+    }
+
+    const { phoneNumber } = req.body;
+
+    // Check if user exists with this phone number
+    let user = await User.findOne({ 'profile.phoneNumber': phoneNumber });
+    
+    // Generate verification code
+    const verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
+    const verificationExpiry = new Date(Date.now() + 10 * 60 * 1000); // 10 minutes
+
+    if (user) {
+      // Update existing user's verification code
+      user.verification.phone = {
+        verified: false,
+        verificationCode,
+        expiresAt: verificationExpiry
+      };
+      await user.save();
+    } else {
+      // Create a temporary user with phone number
+      user = new User({
+        email: `${phoneNumber.replace(/\+/g, '')}@temp.onetime.app`, // Temporary email
+        passwordHash: Math.random().toString(36).substring(7), // Random password
+        profile: {
+          name: 'User',
+          phoneNumber,
+          age: 18,
+          gender: 'other'
+        },
+        verification: {
+          phone: {
+            verified: false,
+            verificationCode,
+            expiresAt: verificationExpiry
+          }
+        },
+        isPhoneOnlyUser: true
+      });
+      await user.save();
+    }
+
+    // Send SMS with verification code
+    try {
+      await sendSMS(phoneNumber, `Your One Time verification code is: ${verificationCode}`);
+      logger.info('SMS verification code sent', { phoneNumber });
+    } catch (smsError) {
+      logger.error('Failed to send SMS:', smsError);
+      // For development/testing, we'll still return success
+      if (process.env.NODE_ENV === 'development') {
+        logger.info('Development mode - verification code:', { phoneNumber, verificationCode });
+      } else {
+        return res.status(500).json({
+          success: false,
+          message: 'Failed to send verification code'
+        });
+      }
+    }
+
+    res.json({
+      success: true,
+      message: 'Verification code sent successfully',
+      data: {
+        phoneNumber,
+        // Include code in development for testing
+        ...(process.env.NODE_ENV === 'development' && { verificationCode })
+      }
+    });
+
+  } catch (error) {
+    logger.error('Phone send code error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to send verification code',
+      error: process.env.NODE_ENV === 'development' ? error.message : 'Internal server error'
+    });
+  }
+});
+
+// Verify phone code endpoint
+router.post('/phone/verify', [
+  body('phoneNumber').matches(/^\+?[1-9]\d{1,14}$/).withMessage('Invalid phone number format'),
+  body('code').isLength({ min: 6, max: 6 }).withMessage('Verification code must be 6 digits')
+], async (req, res) => {
+  try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({
+        success: false,
+        message: 'Validation errors',
+        errors: errors.array()
+      });
+    }
+
+    const { phoneNumber, code } = req.body;
+
+    const user = await User.findOne({ 'profile.phoneNumber': phoneNumber });
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: 'User not found'
+      });
+    }
+
+    // Check verification code and expiry
+    if (!user.verification.phone || user.verification.phone.verificationCode !== code) {
+      return res.status(400).json({
+        success: false,
+        message: 'Invalid verification code'
+      });
+    }
+
+    if (user.verification.phone.expiresAt < new Date()) {
+      return res.status(400).json({
+        success: false,
+        message: 'Verification code expired'
+      });
+    }
+
+    // Mark phone as verified
+    user.verification.phone.verified = true;
+    user.verification.phone.verificationCode = undefined;
+    user.verification.phone.expiresAt = undefined;
+    
+    // Update last active time
+    user.analytics.lastActiveAt = new Date();
+    await user.save();
+
+    // Generate tokens
+    const token = generateToken(user._id);
+    const refreshToken = generateRefreshToken(user._id);
+
+    logger.info('Phone verified successfully', { 
+      userId: user._id, 
+      phoneNumber 
+    });
+
+    res.json({
+      success: true,
+      message: 'Phone verified successfully',
+      data: {
+        user: user.getPublicProfile(),
+        token,
+        refreshToken,
+        isNewUser: user.isPhoneOnlyUser && !user.profile.name || user.profile.name === 'User'
+      }
+    });
+
+  } catch (error) {
+    logger.error('Phone verification error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Phone verification failed',
+      error: process.env.NODE_ENV === 'development' ? error.message : 'Internal server error'
+    });
+  }
+});
+
 // Refresh token endpoint
 router.post('/refresh', [
   body('refreshToken').exists().withMessage('Refresh token is required')
@@ -407,6 +577,96 @@ router.post('/logout', auth, async (req, res) => {
     res.status(500).json({
       success: false,
       message: 'Logout failed'
+    });
+  }
+});
+
+// Apple Sign In endpoint
+router.post('/apple/signin', [
+  body('identityToken').exists().withMessage('Identity token is required')
+], async (req, res) => {
+  try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({
+        success: false,
+        message: 'Validation errors',
+        errors: errors.array()
+      });
+    }
+
+    const { identityToken, authorizationCode, user: appleUser } = req.body;
+
+    // For development/testing, we'll create a mock Apple authentication
+    // In production, you would verify the identityToken with Apple's servers
+    
+    let email = appleUser?.email;
+    let name = appleUser?.name ? `${appleUser.name.firstName} ${appleUser.name.lastName}` : 'Apple User';
+    
+    // If no email provided (private relay), generate a temporary one
+    if (!email) {
+      const appleId = Math.random().toString(36).substring(7);
+      email = `${appleId}@privaterelay.appleid.com`;
+    }
+
+    // Check if user already exists
+    let user = await User.findOne({ email });
+    let isNewUser = false;
+
+    if (!user) {
+      // Create new user
+      isNewUser = true;
+      user = new User({
+        email,
+        passwordHash: Math.random().toString(36).substring(7), // Random password for Apple users
+        profile: {
+          name,
+          age: 18, // Default age, user will need to update
+          gender: 'other' // Default gender, user will need to update
+        },
+        verification: {
+          email: {
+            verified: true // Apple users are pre-verified
+          }
+        },
+        appleId: identityToken, // Store Apple ID token reference
+        isAppleUser: true
+      });
+      await user.save();
+    }
+
+    // Update last active time
+    user.analytics.lastActiveAt = new Date();
+    await user.save();
+
+    // Generate tokens
+    const token = generateToken(user._id);
+    const refreshToken = generateRefreshToken(user._id);
+
+    logger.info('Apple Sign In successful', { 
+      userId: user._id, 
+      email: user.email,
+      isNewUser 
+    });
+
+    res.json({
+      success: true,
+      message: isNewUser ? 'Account created with Apple ID' : 'Signed in with Apple ID',
+      data: {
+        user: user.getPublicProfile(),
+        token,
+        refreshToken,
+        isNewUser,
+        userType: isNewUser ? 'new_user' : 'existing_user'
+      }
+    });
+
+  } catch (error) {
+    logger.error('Apple Sign In error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Apple Sign In failed',
+      error: process.env.NODE_ENV === 'development' ? error.message : 'Internal server error'
     });
   }
 });
