@@ -62,6 +62,9 @@ const Conversation = require('./models/Conversation');
 const Message = require('./models/Message');
 const Activity = require('./models/Activity');
 
+// Import routes
+const authRoutes = require('./routes/auth');
+
 // Import upload middleware
 const { upload, handleUploadError, deleteFromCloudinary, getOptimizedImageUrl } = require('./middleware/upload');
 
@@ -347,6 +350,9 @@ app.post('/api/auth/logout', authenticateToken, (req, res) => {
     message: 'Logged out successfully'
   });
 });
+
+// Additional auth routes (phone, Apple Sign In, etc.)
+app.use('/api/auth', authRoutes);
 
 // DISCOVERY AND MATCHING SYSTEM
 
@@ -4040,9 +4046,9 @@ io.on('connection', (socket) => {
 
 console.log('🚀 Integrating advanced features...');
 
-// Import and integrate all advanced features
+// Import and integrate all advanced features with Socket.io
 const { integrateAdvancedFeatures } = require('./integrate-advanced-features');
-integrateAdvancedFeatures(app);
+integrateAdvancedFeatures(app, io);
 
 console.log('✅ Advanced features integration complete!');
 
