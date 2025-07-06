@@ -62,14 +62,6 @@ const Conversation = require('./models/Conversation');
 const Message = require('./models/Message');
 const Activity = require('./models/Activity');
 
-// Import routes
-const authRoutes = require('./routes/auth');
-
-// Import middleware and utilities required by auth routes
-const authMiddleware = require('./middleware/auth');
-const logger = require('./utils/logger');
-const { sendVerificationEmail, sendSMS } = require('./utils/communications');
-
 // Import upload middleware
 const { upload, handleUploadError, deleteFromCloudinary, getOptimizedImageUrl } = require('./middleware/upload');
 
@@ -357,7 +349,7 @@ app.post('/api/auth/logout', authenticateToken, (req, res) => {
 });
 
 // Additional auth routes (phone, Apple Sign In, etc.)
-app.use('/api/auth', authRoutes);
+// app.use('/api/auth', authRoutes);
 
 // DISCOVERY AND MATCHING SYSTEM
 

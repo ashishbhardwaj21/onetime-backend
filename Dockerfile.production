@@ -1,0 +1,89 @@
+# Multi-stage production Dockerfile for OneTime Backend
+# Optimized for size, security, and performance
+
+# Build stage
+FROM node:18-alpine AS builder
+
+# Install security updates
+RUN apk update && apk upgrade && apk add --no-cache \
+    dumb-init \
+    && rm -rf /var/cache/apk/*
+
+# Create app directory
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies (including dev dependencies for build)
+RUN npm ci --include=dev --no-audit --no-fund
+
+# Copy source code
+COPY . .
+
+# Run build steps
+RUN npm run lint && \
+    npm run test:unit && \
+    npm prune --production && \
+    npm cache clean --force
+
+# Production stage
+FROM node:18-alpine AS production
+
+# Install security updates and required packages
+RUN apk update && apk upgrade && apk add --no-cache \
+    dumb-init \
+    tini \
+    && rm -rf /var/cache/apk/*
+
+# Create non-root user
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S onetime -u 1001 -G nodejs
+
+# Create app directory
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install only production dependencies
+RUN npm ci --only=production --no-audit --no-fund && \
+    npm cache clean --force && \
+    chown -R onetime:nodejs /app
+
+# Copy application code from builder stage
+COPY --from=builder --chown=onetime:nodejs /app .
+
+# Remove unnecessary files
+RUN rm -rf tests/ \
+    .github/ \
+    *.md \
+    .env.* \
+    .eslintrc.js \
+    jest.config.js \
+    .gitignore
+
+# Create logs directory
+RUN mkdir -p /app/logs && chown -R onetime:nodejs /app/logs
+
+# Switch to non-root user
+USER onetime
+
+# Expose port
+EXPOSE 3000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD node scripts/healthCheck.js || exit 1
+
+# Use tini as init system
+ENTRYPOINT ["tini", "--"]
+
+# Start application
+CMD ["dumb-init", "node", "server-prod-simple.js"]
+
+# Labels for metadata
+LABEL maintainer="OneTime Team <team@onetime.app>"
+LABEL version="1.0.0"
+LABEL description="OneTime Dating App Backend API"
+LABEL org.opencontainers.image.source="https://github.com/onetime/backend"

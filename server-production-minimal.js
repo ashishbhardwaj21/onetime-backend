@@ -93,6 +93,34 @@ app.get('/health', (req, res) => {
   });
 });
 
+// App status endpoint
+app.get('/api/app/status', (req, res) => {
+  res.json({
+    success: true,
+    maintenance: false,
+    message: 'App is running normally',
+    timestamp: new Date().toISOString()
+  });
+});
+
+// App version endpoint
+app.get('/api/app/version', (req, res) => {
+  res.json({
+    success: true,
+    minimum_version: '1.0.0',
+    latest_version: '1.0.0',
+    update_optional: false,
+    features: [
+      'Email Authentication',
+      'Phone Authentication', 
+      'Apple Sign In',
+      'User Profiles',
+      'Real-time Messaging'
+    ],
+    timestamp: new Date().toISOString()
+  });
+});
+
 // EMAIL AUTHENTICATION
 app.post('/api/auth/register', [
   body('email').isEmail().normalizeEmail(),

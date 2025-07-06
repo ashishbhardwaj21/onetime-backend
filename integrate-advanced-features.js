@@ -49,8 +49,18 @@ const authenticateToken = async (req, res, next) => {
  * Integrate all advanced features into the Express app
  * @param {Express} app - Express application instance
  */
-function integrateAdvancedFeatures(app) {
+function integrateAdvancedFeatures(app, io = null) {
   console.log('🚀 Integrating advanced features...');
+
+  // Initialize Advanced Chat Service with Socket.io
+  if (io) {
+    const AdvancedChatService = require('./services/AdvancedChatService');
+    const chatService = new AdvancedChatService(io);
+    console.log('💬 Advanced chat service initialized with real-time features');
+    
+    // Make chat service available globally for routes
+    app.set('chatService', chatService);
+  }
 
   // Apple Authentication Routes (no auth required)
   app.use('/api/auth/apple', appleAuthRoutes);
@@ -133,6 +143,30 @@ function integrateAdvancedFeatures(app) {
       });
     }
   });
+
+  // Real-time chat routes (require authentication)
+  const chatRoutes = require('./routes/chat');
+  app.use('/api/chat', authenticateToken, chatRoutes);
+
+  // Photo verification routes (require authentication)
+  const photoVerificationRoutes = require('./routes/photo-verification');
+  app.use('/api/photos', authenticateToken, photoVerificationRoutes);
+
+  // Subscription and monetization routes (require authentication)
+  const subscriptionRoutes = require('./routes/subscription');
+  app.use('/api/subscription', authenticateToken, subscriptionRoutes);
+
+  // User onboarding routes (require authentication)
+  const onboardingRoutes = require('./routes/onboarding');
+  app.use('/api/onboarding', authenticateToken, onboardingRoutes);
+
+  // Analytics and business intelligence routes (require authentication)
+  const analyticsRoutes = require('./routes/analytics');
+  app.use('/api/analytics', authenticateToken, analyticsRoutes);
+
+  // Advanced analytics with ML and A/B testing (require authentication)
+  const advancedAnalyticsRoutes = require('./routes/advanced-analytics');
+  app.use('/api/advanced-analytics', authenticateToken, advancedAnalyticsRoutes);
 
   // All other advanced features (require authentication)
   app.use('/api/advanced', authenticateToken, allAdvancedRoutes);
@@ -446,6 +480,12 @@ function integrateAdvancedFeatures(app) {
   console.log('✅ Advanced features integrated successfully!');
   console.log('📡 New endpoints available:');
   console.log('  - /api/auth/apple/* (Apple Sign-In)');
+  console.log('  - /api/chat/* (Real-time messaging)');
+  console.log('  - /api/photos/* (Photo verification)');
+  console.log('  - /api/subscription/* (Subscription management)');
+  console.log('  - /api/onboarding/* (User onboarding)');
+  console.log('  - /api/analytics/* (Business intelligence)');
+  console.log('  - /api/advanced-analytics/* (ML & A/B testing)');
   console.log('  - /api/advanced/* (All advanced features)');
   console.log('  - /api/discovery/ai-powered (AI discovery)');
   console.log('  - /api/messages/send-enhanced (Enhanced messaging)');
