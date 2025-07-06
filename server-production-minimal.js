@@ -329,9 +329,8 @@ app.post('/api/auth/phone/verify', [
     let user = await User.findOne({ 'profile.phoneNumber': phoneNumber });
     
     if (!user) {
-      // Create new user
+      // Create new user with proper structure
       user = new User({
-        'profile.phoneNumber': phoneNumber,
         isPhoneOnlyUser: true,
         profile: {
           name: 'Phone User',
@@ -351,17 +350,21 @@ app.post('/api/auth/phone/verify', [
         verification: {
           phone: {
             verified: true,
-            number: phoneNumber
+            number: phoneNumber,
+            verifiedAt: new Date()
           }
         }
       });
       
       await user.save();
+      console.log('✅ New phone user created:', phoneNumber);
     } else {
       // Update existing user
       user.verification.phone.verified = true;
+      user.verification.phone.verifiedAt = new Date();
       user.status = 'active';
       await user.save();
+      console.log('✅ Existing phone user verified:', phoneNumber);
     }
 
     // Clear verification data
@@ -420,19 +423,23 @@ app.post('/api/auth/apple/signin', [
       email = `apple_${Date.now()}@privaterelay.appleid.com`;
     }
 
+    // Create a unique Apple ID from the identity token
+    const appleId = `apple_${identityToken.substring(0, 20)}_${Date.now()}`;
+
     // Check if user already exists
     let user = await User.findOne({ 
       $or: [
         { email: email.toLowerCase() },
-        { appleId: identityToken }
+        { appleId: identityToken },
+        { appleId: appleId }
       ]
     });
 
     if (!user) {
-      // Create new user
+      // Create new user with proper structure
       user = new User({
         email: email.toLowerCase(),
-        appleId: identityToken,
+        appleId: appleId,
         isAppleUser: true,
         profile: {
           name,
@@ -450,7 +457,8 @@ app.post('/api/auth/apple/signin', [
         status: 'active',
         verification: {
           email: {
-            verified: true // Apple emails are pre-verified
+            verified: true, // Apple emails are pre-verified
+            verifiedAt: new Date()
           }
         }
       });
@@ -458,6 +466,12 @@ app.post('/api/auth/apple/signin', [
       await user.save();
       console.log('✅ New Apple user created:', email);
     } else {
+      // Update existing user if needed
+      if (!user.appleId) {
+        user.appleId = appleId;
+        user.isAppleUser = true;
+        await user.save();
+      }
       console.log('✅ Existing Apple user logged in:', email);
     }
 
@@ -472,7 +486,13 @@ app.post('/api/auth/apple/signin', [
         userId: user._id,
         accessToken,
         refreshToken,
-        isEmailVerified: true
+        isEmailVerified: true,
+        user: {
+          id: user._id,
+          email: user.email,
+          name: user.profile.name,
+          isAppleUser: user.isAppleUser
+        }
       }
     });
 
@@ -480,7 +500,8 @@ app.post('/api/auth/apple/signin', [
     console.error('Apple Sign In error:', error);
     res.status(500).json({
       success: false,
-      error: 'Apple Sign In failed'
+      error: 'Apple Sign In failed',
+      details: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 });
