@@ -331,6 +331,8 @@ app.post('/api/auth/phone/verify', [
     if (!user) {
       // Create new user with proper structure
       user = new User({
+        email: `phone_${phoneNumber.replace(/\D/g, '')}@temp.com`, // Generate temp email
+        passwordHash: 'phone_signin_no_password', // Default for phone users
         isPhoneOnlyUser: true,
         profile: {
           name: 'Phone User',
@@ -391,7 +393,8 @@ app.post('/api/auth/phone/verify', [
     console.error('Phone verification error:', error);
     res.status(500).json({
       success: false,
-      error: 'Phone verification failed'
+      error: 'Phone verification failed',
+      details: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 });
@@ -439,6 +442,7 @@ app.post('/api/auth/apple/signin', [
       // Create new user with proper structure
       user = new User({
         email: email.toLowerCase(),
+        passwordHash: 'apple_signin_no_password', // Default for Apple users
         appleId: appleId,
         isAppleUser: true,
         profile: {
