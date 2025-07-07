@@ -7,7 +7,8 @@ on:
     branches: [ main ]
 
 env:
-  NODE_VERSION: '18.x'
+  NODE_VERSION: '20.x'
+  AZURE_WEBAPP_NAME: 'onetime-backend'
 
 jobs:
   # Basic checks and deployment
@@ -36,5 +37,24 @@ jobs:
       - name: Validate package.json
         run: node -e "console.log('Package.json is valid JSON')"
 
+      - name: Create deployment package
+        run: |
+          # Remove development files
+          rm -rf .git
+          rm -rf node_modules
+          rm -rf tests
+          rm -rf .github
+          # Keep only production files
+          ls -la
+
+      - name: Deploy to Azure Web App
+        if: github.ref == 'refs/heads/main'
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          slot-name: 'production'
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: .
+
       - name: Success message
-        run: echo "✅ Build completed successfully! Backend is ready for deployment."
+        run: echo "✅ Build and deployment completed successfully!"
